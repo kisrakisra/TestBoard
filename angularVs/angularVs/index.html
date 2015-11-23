@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Angularlarjıs</title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="Main as vm">
+    <input type="text" name="name" ng-model="vm.food" placeholder="Enter food" />
+    <p>Spiracha sauce is greate withjı {{ vm.food }}!</p>
+    <input type="text" ng-model="name" />
+    {{'Hello ' + name + '!'}}
+    <input type="number" ng-model="vm.totalBill" ng-change="vm.calculateTotal()" placeholder="Total Bill" />
+    <input type="number" ng-model="vm.tipPercent" ng-change="vm.calculateTotal()" placeholder="Tip Percentage" />
+    <input type="number" ng-model="vm.peopleAmt" ng-change="vm.calculateTotal()" placeholder="Amount of People" />
+    <div>{{vm.totalPerPerson | currency : '₺' : 0}}</div>
+    <h2>DOM Filter</h2>
+    {{ vm.number | currency : '€' : 0 }}
+
+    <h2>Preprocessed Filter</h2>
+    {{ vm.preprocessText }}
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.js"></script>
+</body>
+</html>
